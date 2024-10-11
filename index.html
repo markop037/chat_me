@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatMe</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="login">
+        <form id="loginForm">
+            <div class="imgLogin">
+                <a href="./index.html"><img src="img/logo.png" alt="logo"></a>
+            </div>
+
+            <div class="email">
+                <input type="email" name="email" id="login_email" placeholder="Email">
+            </div>
+
+            <div class="password">
+                <input type="password" name="password" id="login_password" placeholder="Password">
+            </div>
+
+            <div class="btnLogin"> 
+                <button>Log in</button>
+            </div>
+
+            <div class="signup">
+                <p>Don't have an account?</p>
+                <div class="btnSignup">
+                    <button id="signup">Sign up</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="signup-modal">
+        <button id="closeModal">X</button>
+
+        <form id="registrationForm">
+            <h2>Sign Up</h2>
+
+            <div>
+                <input type="text" id="fullName" name="fullName" placeholder="Full Name">
+            </div>
+
+            <div>
+                <input type="email" id="email" name="email" placeholder="Email">
+            </div>
+
+            <div>
+                <input type="text" id="username" name="username" placeholder="Username">
+            </div>
+
+            <div>
+                <input type="password" id="password" name="password" placeholder="Password">
+            </div>
+
+            <div>
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password">
+            </div>
+
+            <div>
+                <button class="btnSignup">Sign up</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

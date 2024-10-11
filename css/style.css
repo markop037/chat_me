@@ -1,0 +1,132 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.login{
+    background-color: rgb(26, 26, 26);
+    color: white;
+    height: 90vh;
+}
+
+.login{
+    padding-top: 100px;
+}
+
+.login form{
+    text-align: center;
+}
+
+.login .imgLogin{
+    padding-bottom: 40px;
+}
+
+.login img{
+    height: 200px;
+}
+
+.login input{
+    background-color: rgb(26, 26, 26);
+    box-shadow: 0 0 0 0.5px white;
+    border: none;
+    width: 350px;
+    border-radius: 3px;
+    padding: 10px 0;
+}
+
+.email, .password{
+    padding-bottom: 7px;
+}
+
+.login .btnLogin{
+    padding-top: 15px;
+}
+
+.login button{
+    font-size: 17px;
+    width: 350px;
+    border-radius: 10px;
+    padding: 4px 0;
+    cursor: pointer;
+    background-color: #303fc1;
+    border: none;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.login button:hover{
+    background-color: #1e2779;
+}
+
+.login .signup p{
+    padding-top: 25px;
+}
+
+.login .signup button{
+    width: 110px;
+}
+
+.signup-modal{
+    display: none;
+    text-align: center;
+    background-color: rgb(26, 26, 26);
+    box-shadow: rgba(67, 67, 67, 0.8) 0 0 1000px 1000px;
+    padding: 50px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 10%;
+}
+
+.signup-modal h2{
+    padding-bottom: 30px;
+    color: white;
+}
+
+.signup-modal button#closeModal{
+    font-size: 25px;
+    font-weight: bold;
+    background-color: transparent;
+    color: #303fc1;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+
+.signup-modal button#closeModal:hover{
+    color: #1e2779;
+}
+
+.signup-modal div{
+    padding-bottom: 20px;
+}
+
+.signup-modal input{
+    background-color: rgb(26, 26, 26);
+    box-shadow: 0 0 0 0.5px white;
+    border: none;
+    width: 350px;
+    border-radius: 3px;
+    padding: 10px 0;
+}
+
+.signup-modal .btnSignup{
+    font-size: 17px;
+    width: 350px;
+    border-radius: 10px;
+    padding: 4px 0;
+    cursor: pointer;
+    background-color: #303fc1;
+    border: none;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.signup-modal .btnSignup:hover{
+    background-color: #1e2779;
+}
