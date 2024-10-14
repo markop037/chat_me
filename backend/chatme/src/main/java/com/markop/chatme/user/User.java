@@ -1,22 +1,29 @@
 package com.markop.chatme.user;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "users")
 public class User {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    @Column(name = "full_name")
     private String fullName;
     private String email;
     private String username;
     private String password;
-    private String confirmPassword;
 
     public User() {
     }
 
-    public User(String fullName, String email, String username, String password, String confirmPassword) {
+    public User(String fullName, String email, String username, String password) {
         this.fullName = fullName;
         this.email = email;
         this.username = username;
         this.password = password;
-        this.confirmPassword = confirmPassword;
     }
 
     public int getId() {
@@ -57,13 +64,5 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getConfirmPassword() {
-        return confirmPassword;
-    }
-
-    public void setConfirmPassword(String confirmPassword) {
-        this.confirmPassword = confirmPassword;
     }
 }

@@ -45,8 +45,25 @@ document.querySelector("#registrationForm").addEventListener("submit", e => {
     e.preventDefault();
 
     if(validation.validationPassed()){
-        alert("Sve ok!");
+      const user = {
+        fullName: document.querySelector("#fullName").value,
+        email: document.querySelector("#email").value,
+        username: document.querySelector("#username").value,
+        password: document.querySelector("#password").value
+      }
+      
+      fetch("http://localhost:8080/user/register", {
+        method: "POST",
+        headers: {"Content-Type" : "application/json"},
+        body: JSON.stringify(user)
+      })
+      .then(() => {
+        document.querySelector(".signup-modal").style.display = "none";
+        alert("You have successfully registered!"); 
+      })
+
+
     }else{
-        alert("Nije sve ok!")
+        alert("You must fill in all fields!");
     }
 });
