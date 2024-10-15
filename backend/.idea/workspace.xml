@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="79ff765b-4848-47c1-a5f2-7ebb865b97d0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/chatme/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/chatme/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chatme/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/chatme/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chatme/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/chatme/mvnw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chatme/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/chatme/mvnw.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chatme/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/chatme/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chatme/src/main/java/com/markop/chatme/ChatMeApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/chatme/src/main/java/com/markop/chatme/ChatMeApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chatme/src/main/java/com/markop/chatme/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/chatme/src/main/java/com/markop/chatme/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chatme/src/main/java/com/markop/chatme/repository/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/chatme/src/main/java/com/markop/chatme/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/chatme/src/main/java/com/markop/chatme/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chatme/src/main/java/com/markop/chatme/service/UserServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/chatme/src/main/java/com/markop/chatme/user/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/chatme/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/chatme/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chatme/src/test/java/com/markop/chatme/ChatMeApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/chatme/src/test/java/com/markop/chatme/ChatMeApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/js/app.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 4
+}]]></component>
+  <component name="ProjectId" id="2nU33RvjCEp2hwjv3uWvT3K7SMd" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.ChatMeApplication.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="ChatMeApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.markop.chatme.ChatMeApplication" />
+      <module name="chatme" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.markop.chatme.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ChatMeApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="79ff765b-4848-47c1-a5f2-7ebb865b97d0" name="Changes" comment="" />
+      <created>1729013629716</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1729013629716</updated>
+    </task>
+    <servers />
+  </component>
+</project>

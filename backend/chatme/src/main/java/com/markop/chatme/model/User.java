@@ -1,4 +1,4 @@
-package com.markop.chatme.user;
+package com.markop.chatme.model;
 
 import jakarta.persistence.*;
 
@@ -12,6 +12,7 @@ public class User {
 
     @Column(name = "full_name")
     private String fullName;
+
     private String email;
     private String username;
     private String password;

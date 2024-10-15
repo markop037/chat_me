@@ -52,18 +52,71 @@ document.querySelector("#registrationForm").addEventListener("submit", e => {
         password: document.querySelector("#password").value
       }
       
-      fetch("http://localhost:8080/user/register", {
+      fetch("http://localhost:8080/users/register", {
         method: "POST",
         headers: {"Content-Type" : "application/json"},
         body: JSON.stringify(user)
       })
-      .then(() => {
-        document.querySelector(".signup-modal").style.display = "none";
-        alert("You have successfully registered!"); 
-      })
-
-
-    }else{
+      .then(response => {
+        if(response.ok){
+            return response.text().then(message => {
+                alert(message);
+                document.querySelector("#fullName").value = '';
+                document.querySelector("#email").value = '';
+                document.querySelector("#username").value = '';
+                document.querySelector("#password").value = '';
+                document.querySelector(".signup-modal").style.display = "none";
+            });
+        }else {
+            return response.text().then(message => {
+                alert("Registration failed: " + message);
+            });
+        }
+    })
+}else{
         alert("You must fill in all fields!");
     }
+});
+
+document.querySelector("#loginForm").addEventListener("submit", e => {
+    e.preventDefault();
+
+    const username = document.querySelector("#login_username").value;
+    const password = document.querySelector("#login_password").value;
+
+    fetch("http://localhost:8080/users/login", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            username: username, 
+            password: password}),
+    })
+    .then(response => response.json())
+    .then(exists => {
+        const passwordDiv = document.querySelector("#login_password").closest(".password");
+        if (exists) {
+            const existingError = passwordDiv.nextElementSibling;
+            if (existingError && existingError.tagName === "DIV" && existingError.querySelector("ul")) {
+                existingError.remove();
+            }
+            alert('User exists, login successful!');
+        } else {
+            const existingError = passwordDiv.nextElementSibling;
+            if (!existingError || existingError.tagName !== "DIV" || !existingError.querySelector("ul")) {
+                const errorList = document.createElement('ul');
+                const errorItem = document.createElement('li');
+                errorItem.innerText = 'Invalid username or password.';
+                errorList.appendChild(errorItem);
+                
+                const container = document.createElement("div");
+                container.appendChild(errorList);
+                passwordDiv.parentNode.insertBefore(container, passwordDiv.nextSibling);
+            }
+        }
+    })
+    .catch(error => {
+        alert('An error occurred: ' + error.message);
+    });
 });
