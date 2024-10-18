@@ -91,32 +91,42 @@ document.querySelector("#loginForm").addEventListener("submit", e => {
         },
         body: JSON.stringify({
             username: username, 
-            password: password}),
+            password: password
+        }),
     })
-    .then(response => response.json())
-    .then(exists => {
-        const passwordDiv = document.querySelector("#login_password").closest(".password");
-        if (exists) {
-            const existingError = passwordDiv.nextElementSibling;
-            if (existingError && existingError.tagName === "DIV" && existingError.querySelector("ul")) {
-                existingError.remove();
-            }
-            alert('User exists, login successful!');
-        } else {
-            const existingError = passwordDiv.nextElementSibling;
-            if (!existingError || existingError.tagName !== "DIV" || !existingError.querySelector("ul")) {
-                const errorList = document.createElement('ul');
-                const errorItem = document.createElement('li');
-                errorItem.innerText = 'Invalid username or password.';
-                errorList.appendChild(errorItem);
-                
-                const container = document.createElement("div");
-                container.appendChild(errorList);
-                passwordDiv.parentNode.insertBefore(container, passwordDiv.nextSibling);
-            }
+    .then(response => {
+        if(!response.ok){
+            return response.text().then(text => {
+                throw new Error(text);
+            })
+        };
+        return response.json();
+    })
+    .then(data => {
+        let session = new Session();
+        session.user_id = data.id;
+        session.startSession();
+
+        window.location.href = "chatme.html";
+
+        const passwordDiv = document.querySelector(".password");
+        const existingError = passwordDiv.nextElementSibling;
+        if (existingError && existingError.tagName === "DIV" && existingError.querySelector("ul")) {
+            existingError.remove();
         }
     })
     .catch(error => {
-        alert('An error occurred: ' + error.message);
-    });
+        const passwordDiv = document.querySelector(".password");
+        const existingError = passwordDiv.nextElementSibling;
+        if (!existingError || existingError.tagName !== "DIV" || !existingError.querySelector("ul")) {
+            const errorList = document.createElement('ul');
+            const errorItem = document.createElement('li');
+            errorItem.innerText = error.message;
+            errorList.appendChild(errorItem);
+            
+            const container = document.createElement("div");
+            container.appendChild(errorList);
+            passwordDiv.parentNode.insertBefore(container, passwordDiv.nextSibling);
+        }
+    })
 });

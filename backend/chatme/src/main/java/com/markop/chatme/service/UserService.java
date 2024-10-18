@@ -24,13 +24,15 @@ public class UserService implements UserServiceInt{
     }
 
     @Override
-    public boolean checkUserExists(String username, String password) {
+    public User checkUserExists(String username, String password) {
         Optional<User> userOptional = userRepository.findByUsername(username);
         if(userOptional.isPresent()){
             User user = userOptional.get();
-            return encoder.matches(password, user.getPassword());
+            if(encoder.matches(password, user.getPassword())){
+                return user;
+            }
         }
-        return false;
+        return null;
     }
 
     public boolean existsByUsername(String username){

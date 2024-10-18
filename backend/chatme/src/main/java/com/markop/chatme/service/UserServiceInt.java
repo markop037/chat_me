@@ -4,5 +4,5 @@ import com.markop.chatme.model.User;
 
 public interface UserServiceInt {
     public User saveUser(User user);
-    public boolean checkUserExists(String username, String password);
+    public User checkUserExists(String username, String password);
 }

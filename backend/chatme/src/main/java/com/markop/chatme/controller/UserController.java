@@ -40,8 +40,16 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public boolean loginUser(@RequestBody LoginRequest loginRequest){
-        return userService.checkUserExists(loginRequest.getUsername(), loginRequest.getPassword());
+    public ResponseEntity<?> loginUser(@RequestBody User user) {
+        User validUser = userService.checkUserExists(user.getUsername(), user.getPassword());
+
+        if (validUser != null) {
+            LoginRequest loginRequest = new LoginRequest(validUser.getId(),
+                    validUser.getUsername(), validUser.getPassword());
+            return ResponseEntity.ok(loginRequest);
+        }else{
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid username or password");
+        }
     }
 
 }

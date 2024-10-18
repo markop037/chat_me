@@ -1,15 +1,25 @@
 package com.markop.chatme.model;
 
 public class LoginRequest {
+    private int id;
     private String username;
     private String password;
 
     public LoginRequest() {
     }
 
-    public LoginRequest(String username, String password) {
+    public LoginRequest(int id, String username, String password) {
+        this.id = id;
         this.username = username;
         this.password = password;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getUsername() {
