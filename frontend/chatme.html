@@ -1,11 +1,69 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Pozdrav</h1>
-</body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ChatMe</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/chatme.css">
+  </head>
+  <body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="inner-container left-side">
+                    <img src="img/IMG_0479.index.jpg" class="profile">
+
+                    <p><b id="username"></b></p>
+
+                    <button id="editAccount">Edit account</button>
+                    <button id="signout">Sign out</button>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="inner-container right-side">
+                    <form id="postForm">
+                        <textarea id="postContent" placeholder="Write something"></textarea>
+                        <button id="btnPost">Publish</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="custom-modal">
+        <button id="closeModal">X</button>
+
+        <form id="editForm">
+            <h2>Edit your account</h2>
+
+            <div>
+                <input type="text" id="fullName" name="fullName" placeholder="Full Name">
+            </div>
+
+            <div>
+                <input type="email" id="email" name="email" placeholder="Email">
+            </div>
+
+            <div>
+                <input type="text" id="username" name="username" placeholder="Username">
+            </div>
+
+            <div>
+                <input type="password" id="password" name="password" placeholder="Password">
+            </div>
+
+            <div>
+                <button class="btnEdit">Edit</button>
+            </div>
+        </form>
+
+        <hr>
+
+        <button id="deleteProfile">DELETE PROFILE</button>
+    </div>
+
+    <script src="js/Session.js"></script>
+    <script src="js/chatme.js"></script>
+  </body>
 </html>

@@ -45,7 +45,7 @@ public class UserController {
 
         if (validUser != null) {
             LoginRequest loginRequest = new LoginRequest(validUser.getId(),
-                    validUser.getUsername(), validUser.getPassword());
+                    validUser.getUsername(), validUser.getPassword(), user.getEmail(), user.getFullName());
             return ResponseEntity.ok(loginRequest);
         }else{
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid username or password");

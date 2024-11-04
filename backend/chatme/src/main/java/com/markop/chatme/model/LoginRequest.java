@@ -4,6 +4,32 @@ public class LoginRequest {
     private int id;
     private String username;
     private String password;
+    private String email;
+    private String fullName;
+
+    public LoginRequest(int id, String username, String password, String email, String fullName) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.fullName = fullName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
 
     public LoginRequest() {
     }

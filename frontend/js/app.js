@@ -1,3 +1,10 @@
+let session = new Session();
+session = session.getSession();
+
+if(session !== ""){
+    window.location.href = "chatme.html"
+}
+
 document.querySelector("#signup").addEventListener("click", e => {
     e.preventDefault();
     document.querySelector(".signup-modal").style.display = "block";
@@ -105,6 +112,7 @@ document.querySelector("#loginForm").addEventListener("submit", e => {
     .then(data => {
         let session = new Session();
         session.user_id = data.id;
+        session.username = data.username;
         session.startSession();
 
         window.location.href = "chatme.html";
