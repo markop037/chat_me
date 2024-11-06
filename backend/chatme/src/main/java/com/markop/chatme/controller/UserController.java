@@ -24,8 +24,8 @@ public class UserController {
             }
 
             if (userService.existsByEmail(user.getEmail())) {
-            return ResponseEntity.status(HttpStatus.CONFLICT).body("Email is already taken");
-        }
+                return ResponseEntity.status(HttpStatus.CONFLICT).body("Email is already taken");
+            }
 
             User savedUser = userService.saveUser(user);
             if (savedUser != null) {
@@ -44,12 +44,45 @@ public class UserController {
         User validUser = userService.checkUserExists(user.getUsername(), user.getPassword());
 
         if (validUser != null) {
-            LoginRequest loginRequest = new LoginRequest(validUser.getId(),
-                    validUser.getUsername(), validUser.getPassword(), user.getEmail(), user.getFullName());
+            LoginRequest loginRequest = new LoginRequest(
+                    validUser.getId(),
+                    validUser.getUsername(),
+                    validUser.getPassword(),
+                    validUser.getEmail(), 
+                    validUser.getFullName()
+            );
             return ResponseEntity.ok(loginRequest);
         }else{
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid username or password");
         }
     }
 
+    @PutMapping("/edit")
+    public ResponseEntity<?> updateUser(@RequestBody User updatedUser) {
+        int userId = updatedUser.getId();
+
+        User existingUser = userService.getUserById(userId);
+        if (existingUser == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User not found");
+        }
+
+        if (!userService.checkPassword(updatedUser.getPassword(), existingUser.getPassword())) {
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Incorrect password.");
+        }
+
+        if (userService.existsByUsername(updatedUser.getUsername())) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("Username already taken.");
+        }
+
+        if (userService.existsByEmail(updatedUser.getEmail())) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("Email already taken.");
+        }
+
+        try {
+            User user = userService.updateUser(userId, updatedUser);
+            return ResponseEntity.ok(user);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User not found or update failed.");
+        }
+    }
 }

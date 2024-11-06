@@ -35,6 +35,16 @@ public class UserService implements UserServiceInt{
         return null;
     }
 
+    public User updateUser(int userId, User updatedUser) {
+        User user = userRepository.findById(userId).orElseThrow(() -> new RuntimeException("User not found"));
+
+        user.setFullName(updatedUser.getFullName());
+        user.setEmail(updatedUser.getEmail());
+        user.setUsername(updatedUser.getUsername());
+
+        return userRepository.save(user);
+    }
+
     public boolean existsByUsername(String username){
         return userRepository.existsByUsername(username);
     }
@@ -42,4 +52,13 @@ public class UserService implements UserServiceInt{
     public boolean existsByEmail(String email){
         return userRepository.existsByEmail(email);
     }
+
+    public User getUserById(int userId) {
+        return userRepository.findById(userId).orElse(null);
+    }
+
+    public boolean checkPassword(String rawPassword, String encodedPassword) {
+        return encoder.matches(rawPassword, encodedPassword);
+    }
+
 }

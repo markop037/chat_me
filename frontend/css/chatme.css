@@ -140,3 +140,10 @@ body{
     background-color: #791e1e;
 }
 
+#passwordError{
+    display: none;
+    padding-top: 5px;
+    color: red;
+    font-size: 13px;
+}
+

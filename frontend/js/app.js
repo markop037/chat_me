@@ -113,6 +113,8 @@ document.querySelector("#loginForm").addEventListener("submit", e => {
         let session = new Session();
         session.user_id = data.id;
         session.username = data.username;
+        session.email = data.email;
+        session.fullName = data.fullName;
         session.startSession();
 
         window.location.href = "chatme.html";
