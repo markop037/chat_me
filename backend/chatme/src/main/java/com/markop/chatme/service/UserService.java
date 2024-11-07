@@ -9,21 +9,19 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 
 @Service
-public class UserService implements UserServiceInt{
+public class UserService{
 
     @Autowired
     private UserRepository userRepository;
     private final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
 
-    @Override
     public User saveUser(User user) {
         String hashedPassword = encoder.encode(user.getPassword());
         user.setPassword(hashedPassword);
         return userRepository.save(user);
     }
 
-    @Override
     public User checkUserExists(String username, String password) {
         Optional<User> userOptional = userRepository.findByUsername(username);
         if(userOptional.isPresent()){
@@ -43,6 +41,14 @@ public class UserService implements UserServiceInt{
         user.setUsername(updatedUser.getUsername());
 
         return userRepository.save(user);
+    }
+
+    public void deleteUserById(int id){
+        if(userRepository.existsById(id)){
+            userRepository.deleteById(id);
+        } else{
+            throw new RuntimeException("User with ID " + id + " does not exist.");
+        }
     }
 
     public boolean existsByUsername(String username){

@@ -136,8 +136,8 @@ body{
     transition: all 0.3s ease;
 }
 
-#deleteProfile{
-    background-color: #791e1e;
+#deleteProfile:hover{
+    background-color: #621010;
 }
 
 #passwordError{

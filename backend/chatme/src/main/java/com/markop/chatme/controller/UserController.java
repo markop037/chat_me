@@ -85,4 +85,14 @@ public class UserController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User not found or update failed.");
         }
     }
+
+    @DeleteMapping("/delete")
+    public ResponseEntity<String> deleteUser(@RequestParam int id){
+        try{
+            userService.deleteUserById(id);
+            return ResponseEntity.ok("User deleted successfully.");
+        } catch (RuntimeException e){
+            return ResponseEntity.status(404).body(e.getMessage());
+        }
+    }
 }

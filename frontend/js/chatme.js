@@ -80,3 +80,36 @@ document.getElementById('editForm').addEventListener('submit', e => {
         });
     }
 });
+
+document.querySelector("#deleteProfile").addEventListener("click", e => {
+    const userId = sessionData.user_id;
+
+    if(userId){
+        fetch(`http://localhost:8080/users/delete?id=${userId}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json"
+            },
+        })
+        .then(response => {
+            if(response.ok){
+                return response.text();
+            } else{
+                return response.text();
+            }
+        })
+        .then(message => {
+            alert(message);
+            if(message === "User deleted successfully."){
+                session.destroySession();
+                window.location.href = "/";
+            }
+        })
+        .catch(error => {
+            console.error("Error:", error);
+            alert('An error occurred while deleting the profile');
+        });
+    } else{
+        alert("No user is logged in");
+    }
+});
