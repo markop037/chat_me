@@ -147,3 +147,40 @@ body{
     font-size: 13px;
 }
 
+
+#allPostsWrapper .single-post{
+    background-color: rgb(62, 62, 62);
+    padding: 20px;
+    margin-top: 30px;
+    color: white;
+}
+
+#allPostsWrapper .single-post .post-content{
+    padding-bottom: 5px;
+    border-bottom: 1px solid black;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+#allPostsWrapper .single-post .post-comments form {
+    height: 30px;
+    margin-top: 15px;
+}
+
+#allPostsWrapper .single-post .post-comments form input {
+    width: 85%;
+    padding: 0 10px;
+}
+
+#allPostsWrapper .single-post .post-comments form button {
+    width: 15%;
+    cursor: pointer;
+    background-color: #303fc1;
+    border: none;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+#allPostsWrapper .single-post .post-comments form button:hover{
+    background-color: #1e2779;
+}

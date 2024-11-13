@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
 @RestController
 @CrossOrigin
 @RequestMapping("/users")
@@ -94,5 +96,12 @@ public class UserController {
         } catch (RuntimeException e){
             return ResponseEntity.status(404).body(e.getMessage());
         }
+    }
+
+    @GetMapping("/{userId}")
+    public ResponseEntity<User> getUser(@PathVariable int userId){
+        Optional<User> user = Optional.ofNullable(userService.getUserById(userId));
+        return user.map(ResponseEntity::ok)
+                .orElseGet(() -> ResponseEntity.notFound().build());
     }
 }

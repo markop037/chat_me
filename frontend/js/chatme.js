@@ -113,3 +113,74 @@ document.querySelector("#deleteProfile").addEventListener("click", e => {
         alert("No user is logged in");
     }
 });
+
+document.querySelector("#postForm").addEventListener("submit", e => {
+    e.preventDefault();
+
+    async function createPost(){
+        let content = document.querySelector("#postContent").value;
+        document.querySelector("#postContent").value = "";
+        let post = new Post();
+        post.post_content = content;
+        post = await post.create();
+
+        let current_user = new User();
+        current_user = await current_user.get(sessionData.user_id)
+        
+        let delete_post_html = "";
+
+        if(sessionData.user_id == post.user_id){
+            delete_post_html = `<button class="btnRemove" onclick="removeMyPost(this)">Remove</button>`
+        }
+
+        document.querySelector("#allPostsWrapper").innerHTML = `<div class="single-post" data-post_id=${post.post_id}">
+                                                                    <div class="post-content">${post.content}</div>
+
+                                                                    <div class="post-actions">
+                                                                        <p><b>Author: </b>${current_user.username}</p>
+                                                                        <div>
+                                                                            <button onclick="likePost(this)" class="likePostJS btnLike"><span>${post.likes}</span> Likes</button>
+                                                                            <button class="btnComment" onclick="commentPost(this)">Comments</button>
+                                                                            ${delete_post_html}
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="post-comments">
+                                                                    <form>
+                                                                        <input placeholder="Write a comment" type="text">
+                                                                        <button onclick="commentSubmit(event)">Comment</button>
+                                                                    </form>
+                                                                    </div>
+                                                                </div>`;
+    }
+
+    createPost();
+});
+
+async function getAllPosts(){
+    let all_posts = new Post();
+    all_posts = await all_posts.getAllPosts();
+
+    all_posts.forEach(post => {
+        let html = document.querySelector("#allPostsWrapper").innerHTML;
+        document.querySelector("#allPostsWrapper").innerHTML = `<div class="single-post">${post.content}</div>` + html;
+    });
+}
+
+getAllPosts();
+
+const commentSubmit = event => {
+
+}
+
+const removeMyPost = event => {
+
+}
+
+const likePost = event => {
+
+}
+
+const commentPost = event => {
+
+}

@@ -7,9 +7,9 @@
     <list default="true" id="79ff765b-4848-47c1-a5f2-7ebb865b97d0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chatme/src/main/java/com/markop/chatme/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/chatme/src/main/java/com/markop/chatme/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chatme/src/main/java/com/markop/chatme/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/chatme/src/main/java/com/markop/chatme/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chatme/src/main/java/com/markop/chatme/service/UserServiceInt.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/chatme.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/chatme.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/img/profile.png" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/img/profile.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/js/chatme.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/js/chatme.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +19,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
