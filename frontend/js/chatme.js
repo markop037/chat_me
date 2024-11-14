@@ -127,10 +127,12 @@ document.querySelector("#postForm").addEventListener("submit", e => {
         let current_user = new User();
         current_user = await current_user.get(sessionData.user_id)
         
+        let html = document.querySelector("#allPostsWrapper").innerHTML;
+
         let delete_post_html = "";
 
         if(sessionData.user_id == post.user_id){
-            delete_post_html = `<button class="btnRemove" onclick="removeMyPost(this)">Remove</button>`
+            delete_post_html = `<button class="btnRemove" onclick="removeMyPost(this)">Remove</button>`;
         }
 
         document.querySelector("#allPostsWrapper").innerHTML = `<div class="single-post" data-post_id=${post.post_id}">
@@ -151,7 +153,7 @@ document.querySelector("#postForm").addEventListener("submit", e => {
                                                                         <button onclick="commentSubmit(event)">Comment</button>
                                                                     </form>
                                                                     </div>
-                                                                </div>`;
+                                                                </div>` + html;
     }
 
     createPost();
@@ -162,8 +164,38 @@ async function getAllPosts(){
     all_posts = await all_posts.getAllPosts();
 
     all_posts.forEach(post => {
-        let html = document.querySelector("#allPostsWrapper").innerHTML;
-        document.querySelector("#allPostsWrapper").innerHTML = `<div class="single-post">${post.content}</div>` + html;
+        async function getPostUser(){
+            let user = new User();
+            user = await user.get(post.user_id);
+
+            let html = document.querySelector("#allPostsWrapper").innerHTML;
+
+            let delete_post_html = "";
+            if(sessionData.user_id == post.user_id){
+                delete_post_html = `<button class="btnRemove" onclick="removeMyPost(this)">Remove</button>`;
+            }
+
+            document.querySelector("#allPostsWrapper").innerHTML = `<div class="single-post" data-post_id=${post.post_id}">
+                                                                    <div class="post-content">${post.content}</div>
+
+                                                                    <div class="post-actions">
+                                                                        <p><b>Author: </b>${user.username}</p>
+                                                                        <div>
+                                                                            <button onclick="likePost(this)" class="likePostJS btnLike"><span>${post.likes}</span> Likes</button>
+                                                                            <button class="btnComment" onclick="commentPost(this)">Comments</button>
+                                                                            ${delete_post_html}
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="post-comments">
+                                                                    <form>
+                                                                        <input placeholder="Write a comment" type="text">
+                                                                        <button onclick="commentSubmit(event)">Comment</button>
+                                                                    </form>
+                                                                    </div>
+                                                                </div>` + html;
+        }
+        getPostUser();
     });
 }
 

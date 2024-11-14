@@ -184,3 +184,41 @@ body{
 #allPostsWrapper .single-post .post-comments form button:hover{
     background-color: #1e2779;
 }
+
+#allPostsWrapper .single-post .post-actions{
+    display: flex;
+    justify-content: space-between;
+    color: gray;
+}
+
+#allPostsWrapper .single-post .post-actions div button.btnLike{
+    background-image: url("/img/like.png");
+    padding: 5px 15px 5px 40px;
+    background-repeat: no-repeat;
+    background-position: 10px;
+    border: 0;
+    background-color: transparent;
+    color: white
+}
+
+#allPostsWrapper .single-post .post-actions div button.btnComment{
+    background-image: url("/img/comment.png");
+    background-color: transparent;
+    padding: 5px 15px 5px 40px;
+    background-repeat: no-repeat;
+    background-position: 10px;
+    border: 0;
+    color: white;
+}
+
+#allPostsWrapper .single-post .post-actions .btnRemove{
+    cursor: pointer;
+    background-color: #c13030;
+    border: none;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+#allPostsWrapper .single-post .post-actions .btnRemove:hover{
+    background-color: #621010;
+}
