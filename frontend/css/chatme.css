@@ -185,6 +185,18 @@ body{
     background-color: #1e2779;
 }
 
+.disabled-button {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    opacity: 0.6;
+    pointer-events: none;
+    transition: none; 
+}
+
+.disabled-button:hover {
+    background-color: #cccccc;
+}
+
 #allPostsWrapper .single-post .post-actions{
     display: flex;
     justify-content: space-between;
@@ -221,4 +233,14 @@ body{
 
 #allPostsWrapper .single-post .post-actions .btnRemove:hover{
     background-color: #621010;
+}
+
+#allPostsWrapper .single-post .post-comments{
+    display: none;
+}
+
+#allPostsWrapper .single-post .post-comments .single-comment{
+    border: 1px dotted rgb(26, 26, 26);
+    padding: 10px;
+    margin-top: 10px;
 }

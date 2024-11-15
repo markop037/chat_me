@@ -26,4 +26,14 @@ public class PostController {
     public List<Post> getAllPosts(){
         return postService.getAllPosts();
     }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<String> deletePost(@PathVariable int id) {
+        try {
+            postService.deletePost(id);
+            return ResponseEntity.ok("Post deleted successfully.");
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
 }

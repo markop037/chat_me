@@ -34,4 +34,13 @@ class Post {
         let data = await response.json();
         return data;
     }
+
+    delete(post_id){
+        fetch(`http://localhost:8080/posts/delete/${post_id}`, {
+            method: "DELETE"
+        })
+        .then(response => response.text())
+        .then(message => alert(message))
+        .catch(() => alert("Failed to delete comment."));
+    }
 }

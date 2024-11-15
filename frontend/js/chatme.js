@@ -168,6 +168,16 @@ async function getAllPosts(){
             let user = new User();
             user = await user.get(post.user_id);
 
+            let comments = new Comment();
+            comments = await comments.get(post.post_id)
+
+            let comments_html = "";
+            if(comments.length > 0){
+                comments.forEach(comment => {
+                    comments_html += `<div class="single-comment">${comment.content}</div>`;
+                });
+            }
+
             let html = document.querySelector("#allPostsWrapper").innerHTML;
 
             let delete_post_html = "";
@@ -175,7 +185,7 @@ async function getAllPosts(){
                 delete_post_html = `<button class="btnRemove" onclick="removeMyPost(this)">Remove</button>`;
             }
 
-            document.querySelector("#allPostsWrapper").innerHTML = `<div class="single-post" data-post_id=${post.post_id}">
+            document.querySelector("#allPostsWrapper").innerHTML = `<div class="single-post" data-post_id=${post.post_id}>
                                                                     <div class="post-content">${post.content}</div>
 
                                                                     <div class="post-actions">
@@ -192,6 +202,7 @@ async function getAllPosts(){
                                                                         <input placeholder="Write a comment" type="text">
                                                                         <button onclick="commentSubmit(event)">Comment</button>
                                                                     </form>
+                                                                    ${comments_html}
                                                                     </div>
                                                                 </div>` + html;
         }
@@ -202,11 +213,36 @@ async function getAllPosts(){
 getAllPosts();
 
 const commentSubmit = event => {
+    event.preventDefault();
 
+    let btn = event.target;
+    btn.setAttribute("disabled", "true");
+    btn.classList.add("disabled-button");
+
+    let main_post_el = btn.closest(".single-post");
+    let post_id = main_post_el.getAttribute("data-post_id");
+
+    let comment_value = main_post_el.querySelector("input").value;
+
+    main_post_el.querySelector("input").value = "";
+
+    main_post_el.querySelector(".post-comments").innerHTML += `<div class="single-comment">${comment_value}</div>`
+
+    let comment = new Comment();
+    comment.user_id = sessionData.user_id;
+    comment.post_id = post_id;
+    comment.content = comment_value;
+
+    comment.create();
 }
 
 const removeMyPost = event => {
+    let post_id = event.closest(".single-post").getAttribute("data-post_id");
 
+    event.closest(".single-post").remove();
+
+    let post = new Post();
+    post.delete(post_id)
 }
 
 const likePost = event => {
@@ -214,5 +250,8 @@ const likePost = event => {
 }
 
 const commentPost = event => {
-
+    let main_post_el = event.closest(".single-post");
+    let post_id = main_post_el.getAttribute("data-post_id");
+    
+    main_post_el.querySelector(".post-comments").style.display = "block";
 }
