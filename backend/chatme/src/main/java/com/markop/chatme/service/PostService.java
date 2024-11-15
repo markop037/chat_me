@@ -24,4 +24,12 @@ public class PostService {
         postRepository.deleteById(id);
     }
 
+    public void updateLikes(int post_id, int likes){
+        Post post = postRepository.findById(post_id).orElse(null);
+        if(post != null){
+            post.setLikes(likes);
+            postRepository.save(post);
+        }
+    }
+
 }

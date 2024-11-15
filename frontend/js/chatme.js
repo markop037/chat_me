@@ -246,7 +246,15 @@ const removeMyPost = event => {
 }
 
 const likePost = event => {
+    let main_post_el = event.closest(".single-post");
+    let post_id = main_post_el.getAttribute("data-post_id");
+    let numbers_of_likes = parseInt(event.querySelector("span").innerText);
 
+    event.querySelector("span").innerText = numbers_of_likes + 1;
+    event.disabled = true;
+
+    let post = new Post();
+    post.like(post_id, numbers_of_likes + 1);
 }
 
 const commentPost = event => {

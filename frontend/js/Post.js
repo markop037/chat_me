@@ -43,4 +43,14 @@ class Post {
         .then(message => alert(message))
         .catch(() => alert("Failed to delete comment."));
     }
+
+    like(post_id, likes){
+        fetch(`http://localhost:8080/posts/like/${post_id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(likes),
+        });
+    }
 }

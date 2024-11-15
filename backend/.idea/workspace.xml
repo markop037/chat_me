@@ -8,9 +8,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chatme/src/main/java/com/markop/chatme/controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/chatme/src/main/java/com/markop/chatme/controller/PostController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chatme/src/main/java/com/markop/chatme/service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/chatme/src/main/java/com/markop/chatme/service/PostService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/chatme.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/chatme.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/css/chatme.css" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/css/chatme.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/js/chatme.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/js/chatme.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -36,4 +36,9 @@ public class PostController {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
+
+    @PutMapping("/like/{id}")
+    public void likePost(@PathVariable int id, @RequestBody int likes){
+        postService.updateLikes(id, likes);
+    }
 }
