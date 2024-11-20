@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="79ff765b-4848-47c1-a5f2-7ebb865b97d0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chatme/src/main/java/com/markop/chatme/controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/chatme/src/main/java/com/markop/chatme/controller/PostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chatme/src/main/java/com/markop/chatme/service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/chatme/src/main/java/com/markop/chatme/service/PostService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,15 +32,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.ChatMeApplication.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.ChatMeApplication.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/mperi/Desktop/chat_me/backend"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="ChatMeApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.markop.chatme.ChatMeApplication" />

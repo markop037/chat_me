@@ -1,3 +1,8 @@
+document.querySelectorAll('input').forEach(input => {
+    input.setAttribute('autocomplete', 'off');
+});
+
+
 let session = new Session();
 session = session.getSession();
 

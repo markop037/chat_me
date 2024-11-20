@@ -1,3 +1,8 @@
+document.querySelectorAll('input').forEach(input => {
+    input.setAttribute('autocomplete', 'off');
+});
+
+
 let session = new Session();
 sessionData = session.getSession();
 
@@ -73,6 +78,7 @@ document.getElementById('editForm').addEventListener('submit', e => {
             return response.json();
         })
         .then(data => {
+            document.cookie = `username=${username}`;
             alert('Profile successfully updated!');
         })
         .catch(error => {
