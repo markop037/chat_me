@@ -17,6 +17,14 @@
 - **Database**: MySQL
 - **Frontend**: HTML, CSS, JavaScript
 
+## How to Import the Database
+
+1. Download the `chatme.sql` file from this repository.
+2. Open a terminal and use the following command to import the database:
+
+   ```bash
+   mysql -u your_username -p --port=your_port chatme < chatme.sql
+
 ## Video Presentation
 
 [![Video title](https://img.youtube.com/vi/YLyQymg3DRU/0.jpg)](https://www.youtube.com/watch?v=YLyQymg3DRU)
